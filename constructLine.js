@@ -1,4 +1,4 @@
-const numberStructures = require('./numberStructures');
+const segments = require('./segments');
 
 //takes two args, the valid input array and line no
 const constructLine = (lineArray, lineNo) => {

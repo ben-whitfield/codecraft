@@ -1,16 +1,16 @@
 const constructLine = require('./constructLine');
 const charArray = require('./constructArray');
 
-const userInput = process.argv[2];
+const userNumber = process.argv[2];
+const userSize = process.argv[3];
 
-const screenOutput = function (userInput) {
-    const lineArray = charArray(userInput)
-    for (let index = 0; index < 3; index++) {
-        console.log(constructLine(lineArray, index))
-    }  
+const screenOutput = function (userNumber, userSize) {
+    const lineArray = charArray(userNumber)
+    
+
 };
 
-console.log('The User Input was:', userInput)
+console.log('The User Input was:', userNumber, 'and the size was: ', userSize)
 console.log('The output is:')
-screenOutput(userInput)
+screenOutput(userNumber, userSize)
 console.log(``)

@@ -1,28 +1,14 @@
-// define the required segments to construct all possible numbers
-const segments = {
-    'n':  '    ',
-    'm':  ' __ ',
-    'lmr':'|__|',
-    'lm': '|__ ',
-    'mr': ' __|',
-    'lr': '|  |',
-    'l':  '|   ',
-    'r':  '   |'
-};
-
-// define each number and segments by line
-// '0' being the first line, '1' the second and so on...
 const numberStructures = {
-    '0': { '0': segments.m, '1': segments.lr, '2': segments.lmr },
-    '1': { '0': segments.n, '1': segments.r, '2': segments.r},
-    '2': { '0': segments.m, '1': segments.mr, '2': segments.lm},
-    '3': { '0': segments.m, '1': segments.mr, '2': segments.mr },
-    '4': { '0': segments.n, '1': segments.lmr, '2': segments.r},
-    '5': { '0': segments.m, '1': segments.lm, '2': segments.mr},
-    '6': { '0': segments.m, '1': segments.lm, '2': segments.lmr },
-    '7': { '0': segments.m, '1': segments.r, '2': segments.r},
-    '8': { '0': segments.m, '1': segments.lmr, '2': segments.lmr},
-    '9': { '0': segments.m, '1': segments.lmr, '2': segments.mr},
+    '0': { 'top': true, 'upperLeft': true, 'upperRight': true, 'middle': false, 'lowerLeft': true, 'lowerRight': true, 'bottom': true },
+    '1': { 'top': false, 'upperLeft': false, 'upperRight': true, 'middle': false, 'lowerLeft': false, 'lowerRight': true, 'bottom': false },
+    '2': { 'top': true, 'upperLeft': false, 'upperRight': true, 'middle': true, 'lowerLeft': true, 'lowerRight': false, 'bottom': true },
+    '3': { 'top': true, 'upperLeft': false, 'upperRight': true, 'middle': true, 'lowerLeft': false, 'lowerRight': true, 'bottom': true },
+    '4': { 'top': false, 'upperLeft': true, 'upperRight': true, 'middle': true, 'lowerLeft': false, 'lowerRight': true, 'bottom': false },
+    '5': { 'top': true, 'upperLeft': true, 'upperRight': false, 'middle': true, 'lowerLeft': false, 'lowerRight': true, 'bottom': true },
+    '6': { 'top': true, 'upperLeft': true, 'upperRight': false, 'middle': true, 'lowerLeft': true, 'lowerRight': true, 'bottom': true },
+    '7': { 'top': true, 'upperLeft': false, 'upperRight': true, 'middle': false, 'lowerLeft': false, 'lowerRight': true, 'bottom': false },
+    '8': { 'top': true, 'upperLeft': true, 'upperRight': true, 'middle': true, 'lowerLeft': true, 'lowerRight': true, 'bottom': true },
+    '9': { 'top': true, 'upperLeft': true, 'upperRight': true, 'middle': true, 'lowerLeft': false, 'lowerRight': true, 'bottom': true }
 };
 
 module.exports = numberStructures;

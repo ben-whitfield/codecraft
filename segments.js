@@ -6,13 +6,8 @@ const buildBottom = numberBuilders.buildBottom;
 const buildUpperFiller = numberBuilders.buildUpperFiller;
 const buildLowerFiller = numberBuilders.buildLowerFiller;
 
-
-// build all of the numbers parts at the correct scale
 const buildNumberParts = (num, size) => {
-    
-    // pull back the matching number structure Object 
     const numberObject = numberStructures[num]
-    
     const builtNumber = {}
     builtNumber[num] = {
         'top': buildTop(numberObject, size),

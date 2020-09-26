@@ -6,7 +6,6 @@ const validateChar = function(val) {
 }
 
 const charArray = (input) => {
-    // create a character array - silently discard any invalid chars
     const inputArr = input.split('')
     const outputArr = inputArr.filter(item=>(validateChar(item)))
     return outputArr

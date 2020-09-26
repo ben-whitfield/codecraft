@@ -8,3 +8,4 @@ Spotted that there is a mathematical relationship which should be exploited rath
 Needed a complete refactor :-( 
 
 Computation time will increase considerably on larger numbers
+

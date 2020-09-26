@@ -9,8 +9,6 @@ const buildLowerFiller = numberBuilders.buildLowerFiller;
 
 // build all of the numbers parts at the correct scale
 const buildNumberParts = (num, size) => {
-    if(num < 0 || num >9) return false
-    if(size < 2) return false
     
     // pull back the matching number structure Object 
     const numberObject = numberStructures[num]
@@ -23,8 +21,6 @@ const buildNumberParts = (num, size) => {
         'upperFiller': buildUpperFiller(numberObject, size),
         'lowerFiller': buildLowerFiller(numberObject, size)
     }
-    console.log('builtNum', builtNumber)
-    
     return builtNumber;
 }
 

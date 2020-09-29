@@ -4,17 +4,30 @@ const customOut = require('./utilities');
 
 const userNumber = process.argv[2];
 const userSize = process.argv[3];
-const screenWidth = 120
+const screenWidth = 40
+
+const outputCount = (letterCount, letterSize) => {
+    return 4
+    // return ((letterCount * letterSize) + (letterCount * 2))
+}
+
+function repeatLine(repeats, lineArray, pos, userSize ) {
+    let output = ``
+    for (let index = 0; index < repeats; index++) {
+        output += `${constructLine(lineArray, pos, userSize)}`
+    }
+    return output
+}
 
 const screenOutput = function (userNumber, userSize) {
     if(userSize < 2) userSize = 2
     const lineArray = charArray(userNumber)
+    const letterCount = lineArray.length
     const totalLines = (userSize * 2)
     const midLine = parseInt(userSize)
 
     customOut.clearScreen
     console.clear();
-    console.log('starting')
     
     let index = screenWidth;
 
@@ -23,11 +36,14 @@ const screenOutput = function (userNumber, userSize) {
             let completeOutput;
             for (let currLine = 0; currLine < totalLines+1; currLine++) {
                 let output = ``
-                if (currLine === 0) { output = constructLine(lineArray, 'top', userSize) } 
-                else if (currLine === totalLines) { output = constructLine(lineArray, 'bottom', userSize) }
-                else if (currLine === midLine) { output = constructLine(lineArray, 'middle', userSize) }
-                else if (currLine > midLine) { output = constructLine(lineArray, 'lowerFiller', userSize) }
-                else if (currLine < midLine) { output = constructLine(lineArray, 'upperFiller', userSize) }
+                if (currLine === 0) { output = repeatLine(outputCount(letterCount, userSize), lineArray, 'top', userSize) } 
+                else if (currLine === totalLines) { output = repeatLine(outputCount(letterCount, userSize), lineArray, 'bottom', userSize) }
+                else if (currLine === midLine) { output = repeatLine(outputCount(letterCount, userSize), lineArray, 'middle', userSize) }
+                else if (currLine > midLine) { output = repeatLine(outputCount(letterCount, userSize), lineArray, 'lowerFiller', userSize) }
+                else if (currLine < midLine) { output = repeatLine(outputCount(letterCount, userSize), lineArray, 'upperFiller', userSize) }
+                if(index < 1) {
+                    index = screenWidth
+                }
                 spaces = `${' '.repeat(parseInt(index))}`
                 lineOutput = `${spaces+output}`
                 completeOutput = `${completeOutput}\n${lineOutput}`
@@ -36,13 +52,10 @@ const screenOutput = function (userNumber, userSize) {
             process.stdout.write(`${completeOutput}`)
             customOut.hide;
             
-        if(index === 0) {
-            clearInterval(myInterval)
-        }
+        // if(index === 0) {
+        //     clearInterval(myInterval)
+        // }
     }, 100);
 };
 
-// console.log('The User Input was:', userNumber, 'and the size was: ', userSize)
-// console.log('The output is:')
 screenOutput(userNumber, userSize)
-// console.log(``)

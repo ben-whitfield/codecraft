@@ -4,10 +4,20 @@ function buildTop(char, size) {
     return ` ${char.repeat(parseInt(size))} `
 }
 function buildLeft(char, size) {
-    return ` ${char}${' '.repeat(parseInt(size-1))} `
+    const repeatSize = (size-1 < 3) ? 2 : size-1
+    let output = ` ${char}${' '.repeat(parseInt(repeatSize))} `
+    for (let index = 0; index < repeatSize; index++) {
+        output += `\n ${char}${' '.repeat(parseInt(repeatSize))} `
+    }
+    return output
 }
 function buildRight(char, size) {
-    return ` ${' '.repeat(parseInt(size-1))}${char} `
+    const repeatSize = (size-1 < 3) ? 2 : size-1
+    let output = ` ${' '.repeat(parseInt(repeatSize))}${char} `
+    for (let index = 0; index < repeatSize; index++) {
+        output += `\n ${' '.repeat(parseInt(repeatSize))}${char} `
+    }
+    return output
 }
 function buildMid(left, middle, right, size) {
     const repeatSize = (size-2 < 3) ? 2 : size-2
@@ -39,7 +49,7 @@ const buildNumber = (num, scale) => {
         'G': `${buildMid(sections['F'],sections['G'],sections['E'],scale)}`,
     
     }
-
+    
     return builtNumber
 }
 

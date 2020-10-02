@@ -1,7 +1,8 @@
 const segments = require('./segments');
 
 function buildTop(char, size) {
-    return ` ${char.repeat(parseInt(size))} `
+    const repeatSize = (size-1 < 2) ? 2 : size
+    return `  ${char.repeat(parseInt(repeatSize))}  `
 }
 
 function buildSegment(left, middle, right, size) {

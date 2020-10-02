@@ -1,17 +1,14 @@
 const getTime = require('./getTime');
-const processTime = require('./processTime');
-const buildNumber = require('./buildNumber');
-// const updateDisplay = require('./updateDisplay');
+const buildTime = require('./buildTime');
+const updateDisplay = require('./updateDisplay');
 
-const userSize = process.argv[2];
-
-const updateDisplay = () => {
-    console.log(getTime())
-}
+const userScale = process.argv[2];
+console.clear();
 
 const update = () => {
     setInterval(()=> {
-        updateDisplay()
+        const finalTime = buildTime(getTime(), userScale)
+        updateDisplay(finalTime)
     }, 1000)
 }
 

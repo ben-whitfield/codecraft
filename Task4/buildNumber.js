@@ -9,10 +9,8 @@ function buildSegment(left, middle, right, size) {
     let output = ``
     for (let index = 0; index < repeatSize; index++) {
         if(index === repeatSize-1) {
-            console.log('equal')
             output += `\n ${left}${middle.repeat(parseInt(repeatSize))}${right} `
         } else {
-            console.log('e noyqual')
             output += `${index===0? '':'\n'} ${left}${' '.repeat(parseInt(repeatSize))}${right} `
         }
     }
@@ -37,8 +35,6 @@ const buildNumber = (num, scale) => {
         '2': `${buildSegment(sections['F'],sections['G'],sections['B'],scale)}`,
         '3': `${buildSegment(sections['E'],sections['D'],sections['C'],scale)}`,
     }
-    console.log(builtNumber['3'])
-    console.log('')
     return builtNumber
 }
 

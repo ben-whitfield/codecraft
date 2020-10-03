@@ -11,5 +11,4 @@ const update = () => {
         updateDisplay(finalTime)
     }, 1000)
 }
-
 update()

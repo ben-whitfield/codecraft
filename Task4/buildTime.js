@@ -22,12 +22,18 @@ const buildTime = (time, userScale) => {
     })
 
     let newArr = []
+    let charNum = 0
     lines.forEach(element => {
         let count = 0
         element.forEach(elem2 => {
-            newArr[count] ? newArr[count] += elem2 : newArr[count] = elem2
+            let spacer = ''
+            if(charNum % 2 === 0) {
+                spacer = (count % 2 === 0) ? '   ' : ' . '
+            }
+            newArr[count] ? newArr[count] += spacer+elem2 : newArr[count] = elem2
             count++ 
         })
+        charNum++
     });
 
     let output = ``

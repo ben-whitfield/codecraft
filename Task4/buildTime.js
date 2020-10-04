@@ -28,7 +28,7 @@ const buildTime = (time, userScale) => {
         element.forEach(elem2 => {
             let spacer = ''
             if(charNum % 2 === 0) {
-                spacer = (count % 2 === 0) ? '   ' : ' . '
+                spacer = ( (count === parseInt(userScale) || count === parseInt(userScale)*2)) ? ' . ' : '   '
             }
             newArr[count] ? newArr[count] += spacer+elem2 : newArr[count] = elem2
             count++ 

@@ -13,9 +13,10 @@ Too much reliance on knowing the shape of the end "object", i.e. having to know 
 Created segments as fixed elements which was simple to produce but 
 
 ## Task 2
-Had to rewrite from scracth
+Had to rewrite from scratch as the fixed nature of the output prevented easy editing / adjusting
 
 ## Task 3
 
-## Task 4
 
+## Task 4
+Re-wrote everything again to make the output generation more flexible

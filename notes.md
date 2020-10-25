@@ -16,7 +16,7 @@ Created segments as fixed elements which was simple to produce but
 Had to rewrite from scratch as the fixed nature of the output prevented easy editing / adjusting
 
 ## Task 3
-
+Made easier by the refactor for task 4. Split the update into two timeouts which called the display update and build time.
 
 ## Task 4
 Re-wrote everything again to make the output generation more flexible

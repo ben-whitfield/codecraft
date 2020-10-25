@@ -7,7 +7,7 @@ const buildDisplay = (endTime, startPos) => {
     
     while (newString[0].length < display) {
         for (let index = 0; index < stringLines.length; index++) {
-            newString[index] = `${newString[index]} ${newString[index]}`
+            newString[index] = `${newString[index]}         ${newString[index]}`
         }
     }
 

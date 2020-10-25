@@ -6,9 +6,16 @@ const userScale = process.argv[2];
 console.clear();
 
 const update = () => {
+    let finalTime = buildTime(getTime(), userScale)
+
     setInterval(()=> {
-        const finalTime = buildTime(getTime(), userScale)
-        updateDisplay(finalTime)
+        finalTime = buildTime(getTime(), userScale)
     }, 1000)
+    
+    setInterval(()=>{
+        updateDisplay(finalTime)
+    }, 200)
+    
+
 }
 update()
